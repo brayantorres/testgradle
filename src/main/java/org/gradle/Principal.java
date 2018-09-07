@@ -32,8 +32,7 @@ public class Principal {
 		return numeroAleatorio;
 	}
 
-	public int generarRandom()
-	{
+	public int generarRandom(){
 		return ((int) (Math.random()*10+0));
 	}
 }

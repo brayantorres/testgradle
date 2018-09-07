@@ -4,6 +4,7 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.mockito.Mockito;
 
 public class PrincipalTest {
 	
@@ -11,7 +12,8 @@ public class PrincipalTest {
 	
 	@Before
 	public void instanciaprincipal () {
-		principal = new Principal();
+		//principal = new Principal();
+		principal = Mockito.spy(Principal.class);
 	}
 	
 	@Test
@@ -82,11 +84,13 @@ public class PrincipalTest {
 	@Test
 	public void ingresoCeroYReciboAleatorio() {
 		//arrange
+		Mockito.when(principal.generarRandom()).thenReturn(2);
 		
 		//act
 		int resultadoaleatorio = principal.sumadealeatorios();
 		
 		//assert
-		assertEquals(2, resultadoaleatorio);
+		assertEquals(4, resultadoaleatorio);
 	}
+		
 }

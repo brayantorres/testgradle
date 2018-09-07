@@ -4,6 +4,7 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.mockito.Mockito;
 
 public class CaluladoraTest {
 	
@@ -11,7 +12,8 @@ public class CaluladoraTest {
 	
 	@Before
 	public void instance () {
-		calculadora = new Calculadora();
+		//calculadora = new Calculadora();
+		calculadora = Mockito.spy(Calculadora.class);
 	}
 	
 	@Test
